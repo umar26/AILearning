@@ -1,0 +1,11 @@
+C:\Users\v-abumar\source\repos\AIConsole\AIConsole\bin\Debug\netcoreapp2.1\AIConsole.deps.json
+C:\Users\v-abumar\source\repos\AIConsole\AIConsole\bin\Debug\netcoreapp2.1\AIConsole.runtimeconfig.json
+C:\Users\v-abumar\source\repos\AIConsole\AIConsole\bin\Debug\netcoreapp2.1\AIConsole.runtimeconfig.dev.json
+C:\Users\v-abumar\source\repos\AIConsole\AIConsole\bin\Debug\netcoreapp2.1\AIConsole.dll
+C:\Users\v-abumar\source\repos\AIConsole\AIConsole\obj\Debug\netcoreapp2.1\AIConsole.csprojAssemblyReference.cache
+C:\Users\v-abumar\source\repos\AIConsole\AIConsole\obj\Debug\netcoreapp2.1\AIConsole.csproj.CoreCompileInputs.cache
+C:\Users\v-abumar\source\repos\AIConsole\AIConsole\obj\Debug\netcoreapp2.1\AIConsole.AssemblyInfoInputs.cache
+C:\Users\v-abumar\source\repos\AIConsole\AIConsole\obj\Debug\netcoreapp2.1\AIConsole.AssemblyInfo.cs
+C:\Users\v-abumar\source\repos\AIConsole\AIConsole\bin\Debug\netcoreapp2.1\AIConsole.pdb
+C:\Users\v-abumar\source\repos\AIConsole\AIConsole\obj\Debug\netcoreapp2.1\AIConsole.dll
+C:\Users\v-abumar\source\repos\AIConsole\AIConsole\obj\Debug\netcoreapp2.1\AIConsole.pdb
