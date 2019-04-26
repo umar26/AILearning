@@ -4,8 +4,8 @@ using System.IO;
 using System.Net;
 using Microsoft.Azure.CognitiveServices.Search.WebSearch;
 using Microsoft.Azure.CognitiveServices.Search.WebSearch.Models;
-using Microsoft.Azure.CognitiveServices.Language.TextAnalytics;
-using Microsoft.Azure.CognitiveServices.Language.TextAnalytics.Models;
+//using Microsoft.Azure.CognitiveServices.Language.TextAnalytics;
+//using Microsoft.Azure.CognitiveServices.Language.TextAnalytics.Models;
 using Microsoft.Rest;
 using System.Net.Http;
 using System.Threading;
@@ -99,87 +99,87 @@ public	class Program
 			return resultpointer;
 		}
 
-		static void TextAnalysis()
-		{
-			//Microsoft.Azure.CognitiveServices.Language.TextAnalytics.ITextAnalyticsClient;
+		//static void TextAnalysis()
+		//{
+		//	//Microsoft.Azure.CognitiveServices.Language.TextAnalytics.ITextAnalyticsClient;
 
-			ITextAnalyticsClient client = new TextAnalyticsClient(new ApiKeyServiceClientCredentials())
-			{
-				Endpoint = Endpoint
-			};
+		//	ITextAnalyticsClient client = new TextAnalyticsClient(new ApiKeyServiceClientCredentials())
+		//	{
+		//		Endpoint = Endpoint
+		//	};
 
-			//var sentimentResults= client.SentimentAsync(false,
-			//	new MultiLanguageBatchInput(new List<MultiLanguageInput>()
-			//	{
-			//		new MultiLanguageInput("en","1","I had the best day of my life."),
-			//		new MultiLanguageInput("en","2", "This was a waste of my time. The speaker put me to sleep."),
-			//		new MultiLanguageInput("en", "3","Rahul gandhi slap its own party member"),
-			//		new MultiLanguageInput("en", "4","Narendra modi is arrogant")
-			//	}
-			//	)).Result;
-			//// Printing sentiment results
-			//foreach (var document in sentimentResults.Documents)
-			//{
-			//	Console.WriteLine($"Document ID: {document.Id} , Sentiment Score: {document.Score:0.00}");
-			//}
-
-
-			//var entitiesResult = client.EntitiesAsync(
-			//   false,
-			//   new MultiLanguageBatchInput(
-			//	   new List<MultiLanguageInput>()
-			//	   {
-			//			new MultiLanguageInput("en", "1", "Microsoft was founded by Bill Gates and Paul Allen on April 4, 1975, to develop and sell BASIC interpreters for the Altair 8800."),
-			//			new MultiLanguageInput("es", "2", "La sede principal de Microsoft se encuentra en la ciudad de Redmond, a 21 kilómetros de Seattle.")
-			//	   })).Result;
-
-			//// Printing entities results
-			//foreach (var document in entitiesResult.Documents)
-			//{
-			//	Console.WriteLine($"Document ID: {document.Id} ");
-
-			//	Console.WriteLine("\t Entities:");
-
-			//	foreach (var entity in document.Entities)
-			//	{
-			//		Console.WriteLine($"\t\tName: {entity.Name},\tType: {entity.Type ?? "N/A"},\tSub-Type: {entity.SubType ?? "N/A"}");
-			//		foreach (var match in entity.Matches)
-			//		{
-			//			Console.WriteLine($"\t\t\tOffset: {match.Offset},\tLength: {match.Length},\tScore: {match.EntityTypeScore:F3}");
-			//		}
-			//	}
-			//}
+		//	//var sentimentResults= client.SentimentAsync(false,
+		//	//	new MultiLanguageBatchInput(new List<MultiLanguageInput>()
+		//	//	{
+		//	//		new MultiLanguageInput("en","1","I had the best day of my life."),
+		//	//		new MultiLanguageInput("en","2", "This was a waste of my time. The speaker put me to sleep."),
+		//	//		new MultiLanguageInput("en", "3","Rahul gandhi slap its own party member"),
+		//	//		new MultiLanguageInput("en", "4","Narendra modi is arrogant")
+		//	//	}
+		//	//	)).Result;
+		//	//// Printing sentiment results
+		//	//foreach (var document in sentimentResults.Documents)
+		//	//{
+		//	//	Console.WriteLine($"Document ID: {document.Id} , Sentiment Score: {document.Score:0.00}");
+		//	//}
 
 
-			// Getting key-phrases
-			Console.WriteLine("\n\n===== KEY-PHRASE EXTRACTION ======");
+		//	//var entitiesResult = client.EntitiesAsync(
+		//	//   false,
+		//	//   new MultiLanguageBatchInput(
+		//	//	   new List<MultiLanguageInput>()
+		//	//	   {
+		//	//			new MultiLanguageInput("en", "1", "Microsoft was founded by Bill Gates and Paul Allen on April 4, 1975, to develop and sell BASIC interpreters for the Altair 8800."),
+		//	//			new MultiLanguageInput("es", "2", "La sede principal de Microsoft se encuentra en la ciudad de Redmond, a 21 kilómetros de Seattle.")
+		//	//	   })).Result;
 
-			var kpResults = client.KeyPhrasesAsync(
-				false,
-				new MultiLanguageBatchInput(
-					new List<MultiLanguageInput>
-					{
+		//	//// Printing entities results
+		//	//foreach (var document in entitiesResult.Documents)
+		//	//{
+		//	//	Console.WriteLine($"Document ID: {document.Id} ");
+
+		//	//	Console.WriteLine("\t Entities:");
+
+		//	//	foreach (var entity in document.Entities)
+		//	//	{
+		//	//		Console.WriteLine($"\t\tName: {entity.Name},\tType: {entity.Type ?? "N/A"},\tSub-Type: {entity.SubType ?? "N/A"}");
+		//	//		foreach (var match in entity.Matches)
+		//	//		{
+		//	//			Console.WriteLine($"\t\t\tOffset: {match.Offset},\tLength: {match.Length},\tScore: {match.EntityTypeScore:F3}");
+		//	//		}
+		//	//	}
+		//	//}
+
+
+		//	// Getting key-phrases
+		//	Console.WriteLine("\n\n===== KEY-PHRASE EXTRACTION ======");
+
+		//	var kpResults = client.KeyPhrasesAsync(
+		//		false,
+		//		new MultiLanguageBatchInput(
+		//			new List<MultiLanguageInput>
+		//			{
 					
-						new MultiLanguageInput("en", "1", "My cat is stiff as a rock."),
-						new MultiLanguageInput("en", "2", "Dawood Ibrahim’s assets worth 15,000 crores seized in UAE"),
-						new MultiLanguageInput("en", "3", " Nostradamus had predicted the rise of supreme leader Narendus"),
-						//new MultiLanguageInput("en", "4", "My cat is stiff as a rock."),
+		//				new MultiLanguageInput("en", "1", "My cat is stiff as a rock."),
+		//				new MultiLanguageInput("en", "2", "Dawood Ibrahim’s assets worth 15,000 crores seized in UAE"),
+		//				new MultiLanguageInput("en", "3", " Nostradamus had predicted the rise of supreme leader Narendus"),
+		//				//new MultiLanguageInput("en", "4", "My cat is stiff as a rock."),
 
-					})).Result;
+		//			})).Result;
 
-			// Printing keyphrases
-			foreach (var document in kpResults.Documents)
-			{
-				Console.WriteLine($"Document ID: {document.Id} ");
+		//	// Printing keyphrases
+		//	foreach (var document in kpResults.Documents)
+		//	{
+		//		Console.WriteLine($"Document ID: {document.Id} ");
 
-				Console.WriteLine("\t Key phrases:");
+		//		Console.WriteLine("\t Key phrases:");
 
-				foreach (string keyphrase in document.KeyPhrases)
-				{
-					Console.WriteLine($"\t\t{keyphrase}");
-				}
-			}
-		}
+		//		foreach (string keyphrase in document.KeyPhrases)
+		//		{
+		//			Console.WriteLine($"\t\t{keyphrase}");
+		//		}
+		//	}
+		//}
 
 
 		static int DecisionForFakeNews(List<WebPage> webPages)

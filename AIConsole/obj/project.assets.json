@@ -5041,9 +5041,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\v-abumar\\source\\repos\\AIConsole\\AIConsole\\AzureBingSearch.csproj",
-      "projectName": "AzureBingSearch",
-      "projectPath": "C:\\Users\\v-abumar\\source\\repos\\AIConsole\\AIConsole\\AzureBingSearch.csproj",
+      "projectUniqueName": "C:\\Users\\v-abumar\\source\\repos\\AIConsole\\AIConsole\\AzureBingSearchConsole.csproj",
+      "projectName": "AzureBingSearchConsole",
+      "projectPath": "C:\\Users\\v-abumar\\source\\repos\\AIConsole\\AIConsole\\AzureBingSearchConsole.csproj",
       "packagesPath": "C:\\Users\\v-abumar\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\v-abumar\\source\\repos\\AIConsole\\AIConsole\\obj\\",
       "projectStyle": "PackageReference",
