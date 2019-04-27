@@ -81,7 +81,8 @@ namespace AzureBingSearch
 				Console.WriteLine($"{item.Key} : {item.Value}");
 				totalsum += item.Value;
 			}
-			totalsum = totalsum / webPages.Count;
+			totalsum=(int)Math.Ceiling(((decimal)totalsum / (decimal)webPages.Count));
+			//totalsum = totalsum / webPages.Count;
 			return totalsum;
 		}
 
@@ -124,4 +125,7 @@ namespace AzureBingSearch
 
 		}
 	}
+
+
+	//fake news 1 A blog titled “Nostradamus and India” has been published on the Times of India website on March 28, 2017. Francois Gautier, the author of this blog, claims to have chanced upon some hidden manuscripts according to which Nostradamus predicted that a supreme leader will be born in the state of Gujarat and his first name would be Narendrus (Narendra). Fracois Gautier claims that these manuscripts were discovered in 2012
 }

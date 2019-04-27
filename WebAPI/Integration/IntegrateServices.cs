@@ -7,6 +7,8 @@ using AzureBingSearch;
 using NaturalLanguageProcessing;
 using Microsoft.Azure.CognitiveServices.ContentModerator;
 using Microsoft.Azure.CognitiveServices.ContentModerator.Models;
+using System.Text.RegularExpressions;
+
 namespace WebAPI.Integration
 {
 	public class IntegrateServices
@@ -21,9 +23,10 @@ namespace WebAPI.Integration
 			//string text = File.ReadAllText(_filePath + "sample.txt");
 			KeyValuePair<string,int> resultFromNLP= nlp.POSIndirectResult(queryterms);
 
-			if(resultFromNLP.Value>=90) //  this is news
+			if(resultFromNLP.Value>=80) //  this is news
 			{
-				 finalPoint = BingSearch.BingNewsSearch(queryterms);
+				string newterms= RemoveFakeTerm(queryterms);
+				 finalPoint = BingSearch.BingNewsSearch(newterms);
 			}
 			return finalPoint;
 			
@@ -38,7 +41,34 @@ namespace WebAPI.Integration
 
 		}
 
-		
+		private int WordCount(string input)
+		{
+			string pattern = "[^\\w]";
+			//get all spaces and other signs, like: '.' '?' '!'
+			//string input = "This is a nice day. What about this? This tastes good. I saw a dog!";
+			string[] words = null;
+			int i = 0;
+			int count = 0;
+			Console.WriteLine(input);
+			words = Regex.Split(input, pattern, RegexOptions.IgnoreCase);
+			for (i = words.GetLowerBound(0); i <= words.GetUpperBound(0); i++)
+			{
+				if (words[i].ToString() == string.Empty)
+					count = count - 1;
+				count = count + 1;
+			}
+			return count;
+			//Console.WriteLine("Count of words:" + count.ToString());
+		}
+
+		public static string RemoveFakeTerm( string input)
+		{
+			//int wordcount = WordCount(input);
+			string removedfakewords = input.ToLower().Replace("fake", "");
+			return removedfakewords;
+		}
+
+
 	}
 
 	public class FakeTemplate

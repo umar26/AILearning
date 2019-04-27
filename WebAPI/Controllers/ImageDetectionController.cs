@@ -24,16 +24,18 @@ namespace WebAPI.Controllers
         {
 			int finalscore = 0;
 			imageUrl = imageUrl.Replace("__", "&").Replace("_2f_", "%2F");
-			if (string.IsNullOrEmpty(imageUrl))
+			if (!string.IsNullOrEmpty(imageUrl))
 			{
 				string texttosearch = IntegrateServices.EvaluateImage(imageUrl);
-
-				
-				finalscore = IntegrateServices.IntegratedResult(texttosearch);
+				if (texttosearch.Length >= 50)
+				{
+					finalscore = IntegrateServices.IntegratedResult(texttosearch);
+				}
 				//int result=  BingSearch.BingNewsSearch(querystring);
 			}
 			FakeTemplate result = new FakeTemplate();
 			result.url = imageUrl;
+			result.fakePoints = finalscore;
 			result.isFake = finalscore >= 5;
 			return result;
 		}

@@ -1,20 +1,20 @@
-﻿false news|10
+﻿fake news message|15
+fake news stories|10
+false news|8
 fake news|10  
 fake-news|10
-false claim|10
 fake stories|10
 imprecise data|8
 false information|8
-fake news message|10
-fake news stories|10
 untrustworthy information|5
-hoax|5
-fake|5
-phony news|8
+false claim|10
+phony news|5
 wrong information|5
 faulty information|5
 falsified information|8
 inaccurate info|5
-errorenous|4
-unreliable info|8
-incorrect data|6
+unreliable info|5
+incorrect data|5
+hoax|1
+fake|1
+errorenous|1

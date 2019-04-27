@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text.RegularExpressions;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using AzureBingSearch;
@@ -26,9 +27,13 @@ namespace WebAPI.Controllers
 		public FakeTemplate Get(string querystring)
 		{
 			int finalscore = 0;
-			finalscore= IntegrateServices.IntegratedResult(querystring);
+			if (querystring.Length >= 50)// checking if querystring is beyong 50 char
+			{
+				finalscore = IntegrateServices.IntegratedResult(querystring);
+			}
 			FakeTemplate result = new FakeTemplate();
 			result.url = querystring;
+			result.fakePoints = finalscore;
 			result.isFake = finalscore >= 5;
 			
 			return result;
@@ -49,6 +54,8 @@ namespace WebAPI.Controllers
 		public void Delete(int id)
 		{
 		}
+
+		
 	}
 
 	public class FakeTemplate
@@ -56,6 +63,7 @@ namespace WebAPI.Controllers
 		public string url { get; set; }// we will use same for text also
 		public bool isProcessed { get; set; }
 		public bool isFake { get; set; }
+		public int fakePoints { get; set; }
 
 	}
 }
